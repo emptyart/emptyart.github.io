@@ -1,0 +1,26 @@
+.bw {
+  -webkit-transition: all 1s ease;
+     -moz-transition: all 1s ease;
+       -o-transition: all 1s ease;
+      -ms-transition: all 1s ease;
+          transition: all 1s ease;
+}
+ 
+.bw:hover {
+  -webkit-filter: grayscale(100%);
+}
+
+.main-banner {
+	font-family: 'Kaushan Script', cursive;
+	color:#60B651;
+	font-weight: bold;
+	font-size:26pt;
+}
+
+.page-title{
+	color:#2976be;
+}
+
+.footer{
+	text-align: center;
+}
