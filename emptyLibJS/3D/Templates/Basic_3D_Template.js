@@ -102,9 +102,9 @@
    }
 
    Basic_3D_Template.prototype.handleResize = function() {
-       this.camera.aspect = window.innerWidth / window.innerHeight;
+       this.camera.aspect = 1200 / 1000;
        this.camera.updateProjectionMatrix();
-       this.renderer.setSize(window.innerWidth, window.innerHeight);
+       this.renderer.setSize(800, 600);
    }
 
    return Basic_3D_Template;

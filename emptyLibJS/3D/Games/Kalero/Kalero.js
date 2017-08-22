@@ -5,14 +5,14 @@
  */
 function Kalero(){
   this.ini_camera_x = 35;
-  this.ini_camera_y = 36;
+  this.ini_camera_y = 360;
   this.ini_camera_z = 33;
   this.tank = null;
   this.bgHelicopter = null;
   this.condor = null;
   this.heliFlying = false;
-  this.show_stats = true;
-  this.show_control_gui = true;
+  this.show_stats = false;
+  this.show_control_gui = false;
   this.control = null;
   this.floorTextureUrl = '/emptyLibJS/3D/Games/Kalero/assets/floorb.png';
   this.clearColor = 0xa5b6c5;
@@ -31,7 +31,7 @@ Kalero.prototype.constructor = Kalero;
 
 Kalero.prototype.postInit = function(){
   var p = this;
-  this.camera.position.set(0,150,400);
+  this.camera.position.set(0,300,580);
   this.camera.lookAt(this.scene.position);
   this.floorAndSky();
   this.loadTank();
@@ -45,8 +45,8 @@ this.scene.add(axisHelper);
 }
 
 Kalero.prototype.loadInstructions = function(){
-  var html = "<div id='gameInfo'><B>Press S to Start<br>S Forward<br>W BackWard<br>A TurnLeft<br>D TurnRight<br>U Shoots<br>Y Drops BasketBall</B></div>";
-  $("body").append(html);
+  var html = "<div id='gameInfo'><small><B>Press S to Start<br>S Forward<br>W BackWard<br>A TurnLeft<br>D TurnRight<br>U Shoots<br>Y Drops BasketBall</B><br> hold mouse wheel orbitator camera</small></div>";
+  $("#gameContainer").append(html);
 }
 
 Kalero.prototype.loadLabels = function(){
