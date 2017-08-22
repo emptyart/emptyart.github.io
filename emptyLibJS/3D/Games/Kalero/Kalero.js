@@ -45,7 +45,7 @@ this.scene.add(axisHelper);
 }
 
 Kalero.prototype.loadInstructions = function(){
-  var html = "<div id='gameInfo'><small><B>Press S to Start<br>S Forward<br>W BackWard<br>A TurnLeft<br>D TurnRight<br>U Shoots<br>Y Drops BasketBall</B><br> hold mouse wheel orbitator camera</small></div>";
+  var html = "<div id='gameInfo'><small><B>Press S to Start<br>S Forward<br>W BackWard<br>A TurnLeft<br>D TurnRight<br>U Shoots<br>Y Drops BasketBall</B><br>Z X gun elevation. <br>hold mouse wheel orbitator camera</small></div>";
   $("#gameContainer").append(html);
 }
 
