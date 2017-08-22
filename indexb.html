@@ -17,56 +17,8 @@
     <![endif]-->
 	<script src="/js/jquery.min.js"></script>
     <script src="/js/bootstrap.min.js" integrity="sha384-0mSbJDEHialfmuBBQP6A4Qrprq5OVfW37PRR3j5ELqxss1yVqOtnepnHVP9aJ7xS" crossorigin="anonymous"></script>
-    <script src="/libs/threeb.min.js"></script>
-    <script src="/libs/OrbitControls.js"></script>
-    <!-- <script src="libs/MultiMaterial.js"></script> -->
-    <!-- <script src="libs/JSONLoader.js"></script> -->
-    <script src="/libs/dat.gui.min.js"></script>
-    <script src="/libs/stats.min.js"></script>
-    <script src="/libs/soundjs-0.6.2.min.js"></script>
-    <script src="/emptyLibJS/o.js"></script>
-    <script src="/emptyLibJS/3D/Util/DataStats.js"></script>
-    <script src="/emptyLibJS/3D/Util/Texture.js"></script>
-    <script src="/emptyLibJS/3D/Util/Light.js"></script>
-    <script src="/emptyLibJS/3D/Util/Tools.js"></script>
-    <script src="/emptyLibJS/3D/Util/PropsRemover.js"></script>
-    <script src="/emptyLibJS/3D/Util/Controlable/TerrainVehicle.js"></script>
-    <script src="/emptyLibJS/3D/Util/Controlable/XZMovableGroup.js"></script>
-    <script src="/emptyLibJS/3D/Util/Props/TimedFadeable.js"></script>
-    <script src="/emptyLibJS/3D/Util/Props/SmokeEmitter.js"></script>
-    <script src="/emptyLibJS/3D/Templates/Basic_3D_Template.js"></script>
-    <script src="/emptyLibJS/3D/Templates/Basic_3D_Gravity.js"></script>
-    <script src="/emptyLibJS/3D/Templates/Game.js"></script>
-    <script src="/emptyLibJS/3D/Util/AI/FlyingThing.js"></script>
-    <script src="/emptyLibJS/3D/Util/AI/FollowAndSurround.js"></script>
-    <script src="/emptyLibJS/3D/Util/AI/Orbitator.js"></script>
-    <script src="/emptyLibJS/3D/Factories/SkyBoxFactory.js"></script>
-    <script src="/emptyLibJS/3D/Util/Screen/InfoLabel.js"></script>
-    <script src="/emptyLibJS/3D/Util/AI/selfCenteredHorizontalRotator.js"></script>
-    <script src="/emptyLibJS/3D/Util/AI/selfCenteredVerticalRotator.js"></script>
-    <script src="/emptyLibJS/3D/Util/Mechanics/horizontalRectifierOfVerticalTrajectory.js"></script>
-
-    <!-- physics -->
-  <script src="/WipeOutJS/lib/Wo.js"></script>
-  <script src="/WipeOutJS/lib/Planet.js"></script>
-  <script src="/WipeOutJS/lib/Core/PhysicObject.js"></script>
-  <script src="/WipeOutJS/lib/Mechanics/FallingBouncer.js"></script>
-  <script src="/WipeOutJS/lib/Mechanics/BallisticObject.js"></script>
-  <script src="/WipeOutJS/lib/Mechanics/ObeyGravity.js"></script>
-  <script src="/WipeOutJS/lib/Helper/EventHorizon.js"></script>
-    <!-- end physics -->
-    <!-- Kalero -->
-    <script src="/emptyLibJS/3D/Games/Kalero/FallingBall.js"></script>
-    <script src="/emptyLibJS/3D/Games/Kalero/Tracks.js"></script>
-    <script src="/emptyLibJS/3D/Games/Kalero/Shell.js"></script>
-    <script src="/emptyLibJS/3D/Games/Kalero/D5tGun.js"></script>
-      <script src="/emptyLibJS/3D/Games/Kalero/Tank.js"></script>
-      <script src="/emptyLibJS/3D/Games/Kalero/TestTarget.js"></script>
-        <script src="/emptyLibJS/3D/Games/Kalero/HeliPropeller.js"></script>
-        <script src="/emptyLibJS/3D/Games/Kalero/HeliRudder.js"></script>
-        <script src="/emptyLibJS/3D/Games/Kalero/Helicoptero.js"></script>
-        <script src="/emptyLibJS/3D/Games/Kalero/Condor.js"></script>
-      <script src="/emptyLibJS/3D/Games/Kalero/Kalero.js"></script>
+	<script src="/js/three.min.js"></script>
+	<script src="/js/lib/3dproject.js"></script>
 	<link href="https://maxcdn.bootstrapcdn.com/font-awesome/4.6.2/css/font-awesome.min.css" rel='stylesheet' type='text/css'>
   <script type="text/javascript" src="swfobject.js"></script>
         <script type="text/javascript">
@@ -93,18 +45,6 @@
             // JavaScript enabled so display the flashContent div in case it is not replaced with a swf object.
             swfobject.createCSS("#flashContent", "display:block;text-align:left;");
         </script>
-        <style>
-
-            #gameInfo {
-  position: absolute;
-  top: 80px;
-  left: 30px;
-  width: 300;
-  text-align: center;
-  z-index: 100;
-  display:block;
-}
-        </style>
   </head>
   <body>
     <nav class="navbar navbar-default">
@@ -232,20 +172,96 @@
             </small>
     		</div>
     	</div>
-    	<div id="gameContainer" class="col-md-8">
+    	<div class="col-md-8">
+        <!-- SWFObject's dynamic embed method replaces this alternative HTML content with Flash content when enough
+                     JavaScript and Flash plug-in support is available. The div is initially hidden so that it doesn't show
+                     when JavaScript is disabled.
+                -->
+                <div id="flashContent">
+                    <p>
+                        To view this page ensure that Adobe Flash Player version
+                        10.1.0 or greater is installed.
+                    </p>
+                    <script type="text/javascript">
+                        var pageHost = ((document.location.protocol == "https:") ? "https://" : "http://");
+                        document.write("<a href='http://www.adobe.com/go/getflashplayer'><img src='"
+                                        + pageHost + "www.adobe.com/images/shared/download_buttons/get_flash_player.gif' alt='Get Adobe Flash player' /></a>" );
+                    </script>
+                </div>
+
+                <noscript>
+                    <object classid="clsid:D27CDB6E-AE6D-11cf-96B8-444553540000" width="800" height="430" id="tresdb">
+                        <param name="movie" value="SadHill.swf" />
+                        <param name="quality" value="high" />
+                        <param name="bgcolor" value="#ffffff" />
+                        <param name="allowScriptAccess" value="sameDomain" />
+                        <param name="allowFullScreen" value="true" />
+                        <!--[if !IE]>-->
+                        <object type="application/x-shockwave-flash" data="SadHill.swf" width="800" height="430">
+                            <param name="quality" value="high" />
+                            <param name="bgcolor" value="#ffffff" />
+                            <param name="allowScriptAccess" value="sameDomain" />
+                            <param name="allowFullScreen" value="true" />
+                        <!--<![endif]-->
+                        <!--[if gte IE 6]>-->
+                            <p>
+                                Either scripts and active content are not permitted to run or Adobe Flash Player version
+                                10.1.0 or greater is not installed.
+                            </p>
+                        <!--<![endif]-->cd
+                            <a href="http://www.adobe.com/go/getflashplayer">
+                                <img src="http://www.adobe.com/images/shared/download_buttons/get_flash_player.gif" alt="Get Adobe Flash Player" />
+                            </a>
+                        <!--[if !IE]>-->
+                        </object>
+                        <!--<![endif]-->
+                    </object>
+                </noscript>
         </div>
     </div>
     <script>
+    var props = 'transform WebkitTransform MozTransform OTransform msTransform'.split(' '),
+        prop,
+        el = document.createElement('div');
+
+    for(var i = 0, l = props.length; i < l; i++) {
+        if(typeof el.style[props[i]] !== "undefined") {
+            prop = props[i];
+            break;
+        }
+    }
+
+    var xAngle = 0, yAngle = 0;
+
+    window.setTimeout(function(){
+    	yAngle -= 90;
+    	document.getElementById('cube').style[prop] = "rotateX("+xAngle+"deg) rotateY("+yAngle+"deg)";
+    },4000);
+
+    $('body').keydown(function(evt) {
+        switch(evt.keyCode) {
+            case 37: // left
+                yAngle -= 90;
+                break;
+
+            case 38: // up
+                xAngle += 90;
+                evt.preventDefault();
+                break;
+
+            case 39: // right
+                yAngle += 90;
+                break;
+
+            case 40: // down
+                xAngle -= 90;
+                evt.preventDefault();
+                break;
+        };
+        document.getElementById('cube').style[prop] = "rotateX("+xAngle+"deg) rotateY("+yAngle+"deg)";
+    });
+
     $(document).ready(function(){
-      var app = new Kalero();
-      //app.setContainer('app');
-      //console.log(app);
-      app.init();
-      function handleResize(){
-        app.handleResize();
-      }
-      app.handleResize();
-      window.addEventListener('resize', handleResize, false);
     });
     </script>
     <!-- End Plantilla -->
