@@ -62,7 +62,19 @@
         <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-2">
 
           <ul class="nav navbar-nav navbar-right">
-            <li><a href="#">contact</a></li>
+            <!-- begin template nav -->
+<li><a href="https://github.com/rgarro" target="_blank"><i class="fa fa-github"></i>  Code</a></li>
+ <li><a href="https://soundcloud.com/dorje-trolo/" target="_blank"><i class="fa fa-soundcloud"></i>  Sound</a></li>
+ <li class="dropdown">
+          <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false"><i class="fa fa-gamepad"></i> Games <span class="caret"></span></a>
+          <ul class="dropdown-menu">
+            <li><a target="_blank" href="http://tilapya-11303.herokuapp.com/">Odessa_Defender</a></li>
+            <li><a target="_blank" href="/ShastaSpace">ShastaSpace</a></li>
+            <li><a target="_blank" href="/ticoMiles_Alpha/">ticoMiles</a></li>
+          </ul>
+        </li>
+         <li><a href="https://docs.google.com/forms/d/1_FGqiKWvO9DE2dS16QIORQOyP7j3SUhiu5oxB0Pwef4/prefill" target="_blank"><i class="fa fa-send"></i>  Contact</a></li>
+<!-- end template nav -->
           </ul>
         </div>
       </div>
@@ -74,7 +86,7 @@
    </div>
    <footer class="footer">
       <div class="container">
-        <p class="text-muted page-title">- Avoid Evil Do Good and Purify the Mind - </p>
+        <p class="text-muted page-title">- Since all is empty, all is possible. - <br><small>在這個天堂你的屏幕會閃耀</small></p>
         <p>@ 2017</p>
       </div>
     </footer>
