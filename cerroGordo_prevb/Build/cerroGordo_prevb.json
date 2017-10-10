@@ -1,0 +1,9 @@
+{
+"TOTAL_MEMORY": 268435456,
+"dataUrl": "cerroGordo_prevb.data.unityweb",
+"asmCodeUrl": "cerroGordo_prevb.asm.code.unityweb",
+"asmMemoryUrl": "cerroGordo_prevb.asm.memory.unityweb",
+"asmFrameworkUrl": "cerroGordo_prevb.asm.framework.unityweb",
+"splashScreenStyle": "Dark",
+"backgroundColor": "#222C36"
+}
