@@ -1,0 +1,314 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>EmptyArt Web & Game Development</title>
+    <!-- Bootstrap -->
+    <link href="/css/bootstrap.min.css" rel="stylesheet">
+	<link href='https://fonts.googleapis.com/css?family=Kaushan+Script' rel='stylesheet' type='text/css'>
+	<link href="/css/united.css" rel="stylesheet">
+    <!-- HTML5 shim and Respond.js for IE8 support of HTML5 elements and media queries -->
+    <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
+    <!--[if lt IE 9]>
+      <script src="https://oss.maxcdn.com/html5shiv/3.7.2/html5shiv.min.js"></script>
+      <script src="https://oss.maxcdn.com/respond/1.4.2/respond.min.js"></script>
+    <![endif]-->
+	<script src="/js/jquery.min.js"></script>
+    <script src="/js/bootstrap.min.js" integrity="sha384-0mSbJDEHialfmuBBQP6A4Qrprq5OVfW37PRR3j5ELqxss1yVqOtnepnHVP9aJ7xS" crossorigin="anonymous"></script>
+    <script src="/libs/threeb.min.js"></script>
+    <script src="/libs/OrbitControls.js"></script>
+    <!-- <script src="libs/MultiMaterial.js"></script> -->
+    <!-- <script src="libs/JSONLoader.js"></script> -->
+    <script src="/libs/dat.gui.min.js"></script>
+    <script src="/libs/stats.min.js"></script>
+    <script src="/libs/soundjs-0.6.2.min.js"></script>
+    <script src="/emptyLibJS/o.js"></script>
+    <script src="/emptyLibJS/3D/Util/DataStats.js"></script>
+    <script src="/emptyLibJS/3D/Util/Texture.js"></script>
+    <script src="/emptyLibJS/3D/Util/Light.js"></script>
+    <script src="/emptyLibJS/3D/Util/Tools.js"></script>
+    <script src="/emptyLibJS/3D/Util/PropsRemover.js"></script>
+    <script src="/emptyLibJS/3D/Util/Controlable/TerrainVehicle.js"></script>
+    <script src="/emptyLibJS/3D/Util/Controlable/XZMovableGroup.js"></script>
+    <script src="/emptyLibJS/3D/Util/Props/TimedFadeable.js"></script>
+    <script src="/emptyLibJS/3D/Util/Props/SmokeEmitter.js"></script>
+    <script src="/emptyLibJS/3D/Templates/Basic_3D_Template.js"></script>
+    <script src="/emptyLibJS/3D/Templates/Basic_3D_Gravity.js"></script>
+    <script src="/emptyLibJS/3D/Templates/Game.js"></script>
+    <script src="/emptyLibJS/3D/Util/AI/FlyingThing.js"></script>
+    <script src="/emptyLibJS/3D/Util/AI/FollowAndSurround.js"></script>
+    <script src="/emptyLibJS/3D/Util/AI/Orbitator.js"></script>
+    <script src="/emptyLibJS/3D/Factories/SkyBoxFactory.js"></script>
+    <script src="/emptyLibJS/3D/Util/Screen/InfoLabel.js"></script>
+    <script src="/emptyLibJS/3D/Util/AI/selfCenteredHorizontalRotator.js"></script>
+    <script src="/emptyLibJS/3D/Util/AI/selfCenteredVerticalRotator.js"></script>
+    <script src="/emptyLibJS/3D/Util/Mechanics/horizontalRectifierOfVerticalTrajectory.js"></script>
+
+    <!-- physics -->
+  <script src="/WipeOutJS/lib/Wo.js"></script>
+  <script src="/WipeOutJS/lib/Planet.js"></script>
+  <script src="/WipeOutJS/lib/Core/PhysicObject.js"></script>
+  <script src="/WipeOutJS/lib/Mechanics/FallingBouncer.js"></script>
+  <script src="/WipeOutJS/lib/Mechanics/BallisticObject.js"></script>
+  <script src="/WipeOutJS/lib/Mechanics/ObeyGravity.js"></script>
+  <script src="/WipeOutJS/lib/Helper/EventHorizon.js"></script>
+    <!-- end physics -->
+    <!-- Kalero -->
+    <script src="/emptyLibJS/3D/Games/Kalero/FallingBall.js"></script>
+    <script src="/emptyLibJS/3D/Games/Kalero/Tracks.js"></script>
+    <script src="/emptyLibJS/3D/Games/Kalero/Shell.js"></script>
+    <script src="/emptyLibJS/3D/Games/Kalero/D5tGun.js"></script>
+      <script src="/emptyLibJS/3D/Games/Kalero/Tank.js"></script>
+      <script src="/emptyLibJS/3D/Games/Kalero/TestTarget.js"></script>
+        <script src="/emptyLibJS/3D/Games/Kalero/HeliPropeller.js"></script>
+        <script src="/emptyLibJS/3D/Games/Kalero/HeliRudder.js"></script>
+        <script src="/emptyLibJS/3D/Games/Kalero/Helicoptero.js"></script>
+        <script src="/emptyLibJS/3D/Games/Kalero/Condor.js"></script>
+      <script src="/emptyLibJS/3D/Games/Kalero/Kalero.js"></script>
+	<link href="https://maxcdn.bootstrapcdn.com/font-awesome/4.6.2/css/font-awesome.min.css" rel='stylesheet' type='text/css'>
+  <script type="text/javascript" src="swfobject.js"></script>
+        <script type="text/javascript">
+            // For version detection, set to min. required Flash Player version, or 0 (or 0.0.0), for no version detection.
+            var swfVersionStr = "10.1.0";
+            // To use express install, set to playerProductInstall.swf, otherwise the empty string.
+            var xiSwfUrlStr = "playerProductInstall.swf";
+            var flashvars = {};
+            var params = {};
+            params.quality = "high";
+            params.bgcolor = "#ffffff";
+            params.allowscriptaccess = "sameDomain";
+            params.allowfullscreen = "true";
+            params.wmode = "direct";
+            var attributes = {};
+            attributes.id = "tresdb";
+            attributes.name = "tresdb";
+            attributes.align = "middle";
+            swfobject.embedSWF(
+                "SadHill.swf", "flashContent",
+                "680", "430",
+                swfVersionStr, xiSwfUrlStr,
+                flashvars, params, attributes);
+            // JavaScript enabled so display the flashContent div in case it is not replaced with a swf object.
+            swfobject.createCSS("#flashContent", "display:block;text-align:left;");
+        </script>
+        <style>
+
+            #gameInfo {
+  position: absolute;
+  top: 80px;
+  left: 30px;
+  width: 300;
+  text-align: center;
+  z-index: 100;
+  display:block;
+}
+        </style>
+  </head>
+  <body>
+    <noscript>
+         The  Revolution Wont Be Televised!
+      </noscript>
+    <nav class="navbar navbar-default">
+      <div class="container-fluid">
+        <div class="navbar-header">
+          <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#bs-example-navbar-collapse-2">
+            <span class="sr-only">Toggle navigation</span>
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+          </button>
+          <a class="main-banner" href="/">Empty Art</a>
+        </div>
+
+        <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-2">
+
+          <ul class="nav navbar-nav navbar-right">
+<!-- begin template nav -->
+<li><a href="https://sketchfab.com/RolandoGarroMena" target="_blank"><i class="fa fa-dropbox"></i>  3D Modeling</a></li>
+<li><a href="https://github.com/rgarro" target="_blank"><i class="fa fa-github"></i>  Code</a></li>
+<li><a href="https://www.npmjs.com/~rgarro" target="_blank"><i class="fa fa-css3"></i>  NPMS</a></li>
+ <li><a href="https://soundcloud.com/dorje-trolo/" target="_blank"><i class="fa fa-soundcloud"></i>  Sound</a></li>
+ <li class="dropdown">
+          <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false"><i class="fa fa-gamepad"></i> Games <span class="caret"></span></a>
+          <ul class="dropdown-menu">
+	    <li><a target="_blank" href="https://play.unity.com/mg/other/sirtesurfspot">Sirte Surf Spot 2D</a></li>  
+            <li><a target="_blank" href="http://tilapya-11303.herokuapp.com/">Odessa_Defender Heroku</a></li>
+            <li><a target="_blank" href="/odesa.html">Odessa Defender</a></li>
+            <li><a target="_blank" href="/textloader.html">Flash Page Sample</a></li>
+            <li><a target="_blank" href="/ShastaSpace">ShastaSpace</a></li>
+            <li><a target="_blank" href="/ticoMiles_Alpha/">ticoMiles</a></li>
+            <li><a target="_blank" href="/cerroGordo_prevb/">Cerro Gordo prev</a></li>
+            <li><a target="_blank" href="http://cerrogordo.s3-website.eu-west-2.amazonaws.com">Cerro Gordo Alfa-1</a></li>
+            <li><a target="_blank" href="https://play.unity.com/mg/other/cerrogordo">Cerro Gordo on Unity Play</a></li>
+            <li><a target="_blank" href="http://ethelsturn-pre1.s3-website.eu-west-2.amazonaws.com/index.html">EthelsTurn Pre1</a></li>
+            <li><a target="_blank" href="https://play.unity.com/mg/other/ethelturn-pre1">Ethels Turn Pre1 on Unity Play</a></li>
+<li><a target="_blank" href="https://play.unity.com/mg/other/toyotablitzkrieg-pre1">ToyotaBlitzkrieg Pre1 On Unity Play</a></li>
+<li><a target="_blank" href="https://toyotablitzkrieg-pre1.s3.eu-west-2.amazonaws.com/index.html">ToyotaBlitzkrieg Pre1</a></li>
+<li><a target="_blank" href="http://lindora-pre1.s3-website.eu-west-2.amazonaws.com">linDora Pre1</a></li>
+<li><a target="_blank" href="https://play.unity.com/mg/other/lindora-pre1">linDora Pre1 On Unity Play</a></li>
+<li><a target="_blank" href="https://play.unity.com/mg/other/shastaspace-1">ShastaSpace On Unity Play</a></li>
+<li><a target="_blank" href="http://shasta-space.s3-website.eu-west-2.amazonaws.com">ShastaSpace On AWS</a></li>
+<li><a target="_blank" href="https://play.unity.com/mg/other/murcielago-quarry-sketch1">MurcielagoQuarry Sketch1 On Play</a></li>
+<li><a target="_blank" href="/polesgame.html">Poles Game</a></li>
+            <li><a target="_blank" href="/sadhill.html">Sad Hill</a></li>
+            <li><a target="_blank" href="https://clara.io/user/rolo">ClaraIO Profile</a></li>
+          </ul>
+        </li>
+    <li><a href="https://twitter.com/Kan_Garro" target="_blank"><i class="fa fa-twitter-square"></i>  Photography</a></li>
+    <li><a href="http://linkedin.com/in/rolando-garro-mena-6b16b21ab/" target="_blank"><i class="fa fa-linkedin"></i>  LinkedIn</a></li>
+<li><a href="http://git-awards.com/users/rgarro" target="_blank"><i class="fa fa-space-shuttle"></i>  Awards</a></li>
+    <li><a href="https://docs.google.com/forms/d/1_FGqiKWvO9DE2dS16QIORQOyP7j3SUhiu5oxB0Pwef4/prefill" target="_blank"><i class="fa fa-send"></i>  Contact</a></li>
+<!-- end template nav -->
+
+          </ul>
+        </div>
+      </div>
+    </nav>
+    <div class="container-fluid">
+		<!-- Begin Plantilla -->
+    <script type="text/javascript">
+
+      /*function onLoad() {
+    	var game = new example22("container");
+    console.log(game);
+    	game.play();
+    	}*/
+
+    var renderer = null,
+    		scene = null,
+    		camera = null,
+    		cube = null,
+    		animating = false;
+
+    	function onLoad()
+    	{
+    		// Grab our container div
+            var container = document.getElementById("container");
+
+            // Create the Three.js renderer, add it to our div
+    	    renderer = new THREE.WebGLRenderer( { antialias: true } );
+    	    renderer.setSize(container.offsetWidth, container.offsetHeight);
+    	    container.appendChild( renderer.domElement );
+
+    	    // Create a new Three.js scene
+    	    scene = new THREE.Scene();
+
+    	    // Put in a camera
+            camera = new THREE.PerspectiveCamera( 45, container.offsetWidth / container.offsetHeight, 1, 4000 );
+            camera.position.set( 0, 0, 3 );
+
+            // Create a directional light to show off the object
+    		var light = new THREE.DirectionalLight( 0xffffff, 1.5);
+    		light.position.set(0, 0, 1);
+    		scene.add( light );
+
+            // Create a shaded, texture-mapped cube and add it to the scene
+            // First, create the texture map
+            var mapUrl = "/img/redHare.png";
+            var map = THREE.ImageUtils.loadTexture(mapUrl);
+
+            // Now, create a Phong material to show shading; pass in the map
+            var material = new THREE.MeshPhongMaterial({ map: map });
+
+            // Create the cube geometry
+            var geometry = new THREE.CubeGeometry(1, 1, 1);
+
+            // And put the geometry and material together into a mesh
+            cube = new THREE.Mesh(geometry, material);
+
+            // Turn it toward the scene, or we won't see the cube shape!
+            cube.rotation.x = Math.PI / 5;
+            cube.rotation.y = Math.PI / 5;
+
+            // Add the cube to our scene
+            scene.add( cube );
+
+            // Add a mouse up handler to toggle the animation
+            addMouseHandler();
+
+            // Run our render loop
+            run();
+    	}
+
+    	function run()
+    	{
+    		// Render the scene
+    		renderer.render( scene, camera );
+
+    		// Spin the cube for next frame
+    		if (animating)
+    		{
+    			cube.rotation.y -= 0.01;
+    		}
+    			cube.rotation.y -= 0.01;
+    		// Ask for another frame
+        	requestAnimationFrame(run);
+    	}
+
+    	function addMouseHandler()
+    	{
+    		var dom = renderer.domElement;
+
+    		dom.addEventListener( 'mouseup', onMouseUp, false);
+    	}
+
+    	function onMouseUp	(event)
+    	{
+    	    event.preventDefault();
+
+    	    animating = !animating;
+    	}
+
+    </script>
+    <div class="row">
+    	<div class="col-md-4">
+    		<div class="bw pic">
+    		<img class="img-rounded" src="/img/GuanYu.jpg"/><br>
+    		  <small>
+              <br>
+               &nbsp; &nbsp; &nbsp; <i class="fa fa-keyboard-o"></i> Web Programming<br>
+            &nbsp; &nbsp; &nbsp;<i class="fa fa-birthday-cake"></i> CakePHP, C# <br>
+           &nbsp; &nbsp; &nbsp; <i class="fa fa-cube"></i> 2D 3D JavaScript <br>
+           &nbsp; &nbsp; &nbsp; <i class="fa fa-code"></i> Worpress, Drupal <br>
+            &nbsp; &nbsp; &nbsp; <i class="fa fa-database"></i> DataBase Design <br>
+             &nbsp; &nbsp; &nbsp; <i class="fa fa-gamepad"></i> Game Developement <br>
+             &nbsp; &nbsp; &nbsp; <i class="fa fa-android"></i> Hybrid Mobile Apps <br>
+              &nbsp; &nbsp; &nbsp; <i class="fa fa-mobile"></i> PHP, RUBY, Rails <br>
+              &nbsp; &nbsp; &nbsp; <i class="fa fa-mobile"></i> Ecommerce, Magento <br>
+              &nbsp; &nbsp; &nbsp; <i class="fa fa-mobile"></i> Freelance Dev <br>
+            <br>
+            <b> &nbsp; &nbsp; <i>Chunky Bacon!!<br>&nbsp; &nbsp; &nbsp;  Contact Me for a Quote.</i></b></small>
+            <br>
+             &nbsp; &nbsp;<a href="https://wa.me/50662793945" target="_blank"><i class="fa fa-whatsapp"></i> Whatsapp </a>
+             <br>
+            &nbsp; &nbsp; <a href="mailto:rgarro@gmail.com"><i class="fa fa-space-shuttle"></i> Email</a>
+    		</div>
+    	</div>
+    	<div id="gameContainer" class="col-md-8">
+        </div>
+    </div>
+    <script>
+    $(document).ready(function(){
+      var app = new Kalero();
+      //app.setContainer('app');
+      //console.log(app);
+      app.init();
+      function handleResize(){
+        app.handleResize();
+      }
+      app.handleResize();
+      window.addEventListener('resize', handleResize, false);
+    });
+    </script>
+    <!-- End Plantilla -->
+   </div>
+   <footer class="footer">
+      <div class="container">
+        <p class="text-muted page-title"><small>chunky bacon ! chunky bacon ! 厚厚的培根</small></p>
+        <p>@ 2021</p>
+      </div>
+    </footer>
+  </body>
+</html>
